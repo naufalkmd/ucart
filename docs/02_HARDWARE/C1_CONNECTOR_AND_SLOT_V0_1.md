@@ -181,3 +181,5 @@ Do not rely on labels alone to prevent reverse insertion.
 Prototype the host around the recommended card-edge concept first.
 
 If the first mechanical mockup shows unacceptable insertion feel or connector stress, revise the connector family before changing the shell philosophy.
+
+Connector-family narrowing and build staging are documented in `C1_CONNECTOR_SHORTLIST_AND_PROTOTYPE_PLAN_V0_1.md`.
