@@ -28,6 +28,8 @@ Plan around this usable body volume after shell walls and retention features:
 - internal height target: `84 mm`
 - internal thickness target: `12 mm`
 
+How this volume is divided between the shared body, faceplate, and internal carrier is defined in `C1_SHELL_BREAKDOWN_V0_1.md`.
+
 ## Front-Face Zone
 
 Reserve the exposed cartridge face for module-specific access:

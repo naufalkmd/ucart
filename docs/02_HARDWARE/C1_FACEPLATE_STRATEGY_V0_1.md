@@ -14,6 +14,8 @@ It does not use one totally different full shell per module.
 
 What changes by module should be as limited as possible.
 
+The shell-part breakdown behind this rule is defined in `C1_SHELL_BREAKDOWN_V0_1.md`.
+
 ## Shared Across All C1 Cartridges
 
 These should stay common across the full `C1` family:
