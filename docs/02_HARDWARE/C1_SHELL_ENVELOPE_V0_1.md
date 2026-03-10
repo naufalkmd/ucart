@@ -36,6 +36,8 @@ Reserve the exposed cartridge face for module-specific access:
 - small status label area
 - optional service or breakout cutout
 
+The allowed front-face family variations for `C1` are defined in `C1_FACEPLATE_STRATEGY_V0_1.md`.
+
 ## Slot Assumptions
 
 The host slot should assume:

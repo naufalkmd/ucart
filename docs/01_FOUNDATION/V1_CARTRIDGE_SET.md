@@ -60,6 +60,12 @@ Deferred because it changes too many constraints at once:
 
 Deferred because the board ecosystem is fragmented and the project needs a stable cartridge baseline first.
 
+## Faceplate Mapping
+
+- `C1-001 RTL-SDR Scout` -> `RF` faceplate
+- `C1-002 Proxmark3 Easy RFID` -> `RFID` faceplate
+- `C1-003 Utility Nav` -> `Utility` faceplate
+
 ## Success Condition
 
 `uCart` v1 is considered directionally validated when these three cartridges can be:
