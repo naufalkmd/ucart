@@ -6,7 +6,9 @@ Define the first logical signal set for the `C1` cartridge class.
 
 This document freezes the signal model for v0.1.
 
-It does not yet freeze the exact physical connector family.
+The recommended slot and connector direction is documented in `C1_CONNECTOR_AND_SLOT_V0_1.md`.
+
+The exact production connector part is still open.
 
 ## Design Intent
 

@@ -37,10 +37,15 @@
 - `HackRF One` -> future cartridge study
 - `LoRa` -> future cartridge study
 
+## Current Direction
+
+- use a protected internal card-edge style connector for `C1`
+- use top-loading cartridge insertion into the host
+
 ## Open Decisions
 
 - confirm or revise provisional C1 shell dimensions after physical board mockups
-- exact slot insertion direction
+- select the exact production connector family for the recommended card-edge concept
 - host link method between uConsole and `uCart Host`
 - whether `RTC` lives in every host or only in a utility cartridge
 - whether `GNSS` should be cartridge-based or fixed in the host

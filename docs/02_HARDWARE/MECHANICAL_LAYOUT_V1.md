@@ -12,7 +12,7 @@ Rear or top view
 +---------------------------------------------+
 |                 uCart Host                  |
 |                                             |
-|         [ primary female cartridge slot ]   |
+|   top edge -> [ primary female slot ]       |
 |                                             |
 | power + control spine inside host body      |
 +---------------------------------------------+
@@ -25,8 +25,8 @@ USB-C power | host/service link | debug access | status LEDs
 ## Mechanical Standard Rules
 
 - one primary cartridge opening is visible and easy to understand
-- cartridges insert in one consistent direction
-- connector contact area stays protected inside the host
+- cartridges insert from the top edge in one consistent direction
+- connector contact area stays protected inside the host and mates near end-of-travel
 - cartridge face should expose module-specific antennas or service ports as needed
 - retention should feel deliberate and repeatable, not loose friction-fit only
 - keep the center of mass close to the host body
@@ -37,7 +37,7 @@ USB-C power | host/service link | debug access | status LEDs
 - structural bracket to uConsole body
 - removable host shell with captive screws
 - internal guide rails for cartridge alignment
-- protected backplane connector position inside the slot
+- recessed internal card-edge style backplane connector
 - labeled service access for power and debug
 
 ## Practical Interpretation
