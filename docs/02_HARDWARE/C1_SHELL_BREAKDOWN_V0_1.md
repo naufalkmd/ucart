@@ -152,6 +152,8 @@ These are real reasons to create a future shell family or `C2` body, not just a 
 
 `HackRF One` is the obvious future candidate that may hit one or more of these limits.
 
+The first printable shell and slot geometry targets are documented in `C1_SLOT_AND_SHELL_MOCKUP_SPEC_V0_1.md`.
+
 ## Practical Design Rule
 
 If a new cartridge can be solved by changing only:
