@@ -12,6 +12,8 @@ Native `C1` cartridges plug into this interface directly.
 
 The recommended slot and connector direction is documented in `C1_CONNECTOR_AND_SLOT_V0_1.md`.
 
+The first electrical proof build is documented in `PROTOTYPE_0_BREAKOUT_SPEC_V0_1.md`.
+
 The exact production connector part is still open.
 
 ## Design Intent

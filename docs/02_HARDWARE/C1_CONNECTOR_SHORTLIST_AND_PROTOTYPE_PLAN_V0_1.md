@@ -100,6 +100,9 @@ FFC is useful inside a device, but it is the wrong fit for a user-swapped cartri
 
 ### Prototype 0: Electrical Breakout Proof
 
+Detailed hardware and test requirements are frozen in `PROTOTYPE_0_BREAKOUT_SPEC_V0_1.md`.
+
+
 Goal:
 
 Prove the `C1` signal set and power assumptions before building a true cartridge slot.
@@ -108,7 +111,8 @@ Method:
 
 - host-side breakout board exposing all `C1` signals
 - cartridge-side breakout board exposing all `C1` signals
-- connect them with short jumper or ribbon links
+- connect low-speed and power over a short keyed harness
+- connect `USB_D+` and `USB_D-` over a short dedicated link
 - validate native `C1-001 Utility Nav` needs
 - validate compatibility needs for `C3-001 RTL-SDR Scout` and `C3-002 Proxmark3 Easy RFID`
 
