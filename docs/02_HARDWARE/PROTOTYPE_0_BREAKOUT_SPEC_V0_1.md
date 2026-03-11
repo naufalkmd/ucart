@@ -59,6 +59,11 @@ Prototype 0 proves the electrical model only.
 
 Do not let temporary harness choices become the production slot definition.
 
+Common-ground rule:
+
+- the external `5V` supply and the upstream USB host path must share a valid ground reference
+- the design must not back-feed external `5V` into the upstream host port
+
 ## Host Breakout Board Requirements
 
 The host breakout board acts as a temporary stand-in for `uCart Host`.
@@ -291,6 +296,14 @@ Do not start with the hardest compatibility target first.
 - short dedicated `USB` link
 - strap headers or DIP switch for ID and present lines
 - basic test points and LEDs
+
+## Wiring Artifacts
+
+Prototype 0 wiring artifacts live in `hardware/prototype0/`:
+
+- `HOST_BREAKOUT_WIRING_V0_1.md`
+- `CARTRIDGE_BREAKOUT_WIRING_V0_1.md`
+- `HARNESS_PINOUT_V0_1.md`
 
 ## Immediate Deliverables
 
