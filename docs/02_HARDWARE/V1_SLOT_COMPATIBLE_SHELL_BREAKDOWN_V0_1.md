@@ -1,26 +1,31 @@
-# C1 Shell Breakdown v0.1
+# v1 Slot-Compatible Shell Breakdown v0.1
 
 ## Purpose
 
-Define the actual shell-part strategy for the first `C1`-backplane-compatible cartridge body used in v1 so the project uses one shell family with limited variation instead of drifting into one-off cartridge enclosures.
+Define the actual shell-part strategy for the first shared slot-compatible cartridge body used in `uCart` v1.
+
+This exists to make one point explicit:
+
+- `C1` and the first small `C3` cartridges share one host-fit outer body in `v1`
+- they do not become the same class because of that
 
 ## Core Rule
 
-A `C1` cartridge is made from a small number of repeatable parts:
+A `v1` slot-compatible cartridge is made from a small number of repeatable parts:
 
 - one shared main shell body
 - one swappable front faceplate
 - one cartridge-specific internal carrier or bracket set
 
-Optional minor parts are allowed, but the system should not require a fully different outer shell for each cartridge.
+Optional minor parts are allowed, but the system should not require a fully different outer shell for each early cartridge.
 
 ## Shared Shell Architecture
 
 ### 1. Main Shell Body
 
-This is the common structural body used across the `C1` family.
+This is the common structural body used across the frozen `v1` cartridge set.
 
-It should define:
+It defines:
 
 - overall outer dimensions
 - rail contact surfaces
@@ -29,26 +34,30 @@ It should define:
 - main label plane
 - internal mounting datum for the carrier
 
-This part should stay the same across the frozen `C1` v1 cartridges unless physical prototype results force a shell revision.
+This part is shared by:
+
+- native `C1-001 Utility Nav`
+- `C3-001 RTL-SDR Scout`
+- `C3-002 Proxmark3 Easy RFID`
 
 ### 2. Swappable Front Faceplate
 
 This is the visible module-specific front piece.
 
-It should define:
+It defines:
 
 - connector or antenna opening geometry
 - non-metal or reduced-obstruction interaction window where needed
 - LED or button openings
-- family-specific visual identity within the shared shell language
+- native or compatibility visual identity within the shared shell language
 
-For v1, this should follow the native-versus-compatibility faceplate split defined in `V1_FACEPLATE_STRATEGY_V0_1.md`.
+For `v1`, this follows `V1_FACEPLATE_STRATEGY_V0_1.md`.
 
 ### 3. Internal Carrier or Bracket Set
 
 This is the cartridge-specific internal adaptation layer.
 
-It should define:
+It defines:
 
 - how the actual board is mounted inside the shell
 - how the board reaches the carrier edge connector or interposer
@@ -127,7 +136,7 @@ Rules:
 | `C3-001`     | `RTL-SDR Scout`       | Yes               | `C3 RF`            | custom RTL-SDR carrier |
 | `C3-002`     | `Proxmark3 Easy RFID` | Yes               | `C3 RFID`          | custom Proxmark carrier |
 
-## What Should Not Vary in v0.1
+## What Should Not Vary in v1
 
 Do not vary these per cartridge unless testing proves the baseline is wrong:
 
@@ -148,7 +157,7 @@ These are real reasons to create a future shell family or a larger compatibility
 
 `HackRF One` is the obvious future compatibility candidate that may hit one or more of these limits.
 
-The first printable shell and slot geometry targets are documented in `C1_SLOT_AND_SHELL_MOCKUP_SPEC_V0_1.md`.
+The first printable shell and slot geometry targets are documented in `V1_SLOT_COMPATIBLE_MOCKUP_SPEC_V0_1.md`.
 
 ## Practical Design Rule
 

@@ -1,10 +1,20 @@
-# C1 Slot and Shell Mockup Spec v0.1
+# v1 Slot-Compatible Mockup Spec v0.1
 
 ## Purpose
 
-Define the first concrete geometry targets for a printable `C1` host slot and matching cartridge shell mockup.
+Define the first concrete geometry targets for a printable `uCart` host slot and matching shared `v1` shell mockup.
 
 This is a prototype-fit specification, not a production-tolerance drawing.
+
+## Decision Summary
+
+The first printable mockup uses one shared slot-compatible shell body for:
+
+- native `C1-001 Utility Nav`
+- `C3-001 RTL-SDR Scout`
+- `C3-002 Proxmark3 Easy RFID`
+
+This is a physical packaging decision for `v1`, not a claim that the cartridges are the same class.
 
 ## Scope
 
@@ -19,7 +29,7 @@ It is meant to answer these questions:
 
 ## Reference Cartridge Envelope
 
-Use the current `C1` shell envelope as the starting point:
+Use the current shared `v1` shell envelope as the starting point:
 
 - outer width: `68.0 mm`
 - outer height: `92.0 mm`
@@ -170,6 +180,6 @@ The most likely values to change after the first mockup are:
 
 The least likely values to change should be:
 
-- overall cartridge envelope
+- overall shared `v1` shell envelope
 - basic top-loading direction
 - shared shell plus faceplate model

@@ -11,9 +11,10 @@ This exists to prevent two failure modes:
 
 ## Core Rule
 
-- `C1` uses one native compact faceplate family
+- the current `v1` shell body is shared by native `C1` and the first small `C3` cartridges
+- `C1` uses one native compact faceplate family on that shared body
 - `C2` will use one native expanded faceplate family when it is defined
-- `C3` may use multiple compatibility faceplate families
+- `C3` may use multiple compatibility faceplate families on the shared `v1` body where practical
 
 ## Native Faceplate Rules
 

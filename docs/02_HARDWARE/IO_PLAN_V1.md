@@ -45,7 +45,7 @@
 
 ## Open Decisions
 
-- confirm or revise provisional C1 shell dimensions after physical board mockups
+- confirm or revise the shared `v1` slot-compatible shell dimensions after physical board mockups
 - select the exact production connector family from the `C1` shortlist after physical tests
 - host link method between uConsole and `uCart Host`
 - whether `RTC` lives in every host or only in a utility cartridge
