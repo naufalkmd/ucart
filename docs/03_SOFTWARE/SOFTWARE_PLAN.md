@@ -22,6 +22,12 @@ Software should combine multiple signals where available:
 - expected USB VID and PID patterns
 - expected UART or I2C responses for utility cartridges
 
+## Native Simulation Path
+
+Before hardware exists, the native cartridge logic can be exercised in Wokwi using `C1_UTILITY_NAV_WOKWI_TEST_PLAN_V0_1.md`.
+
+This is only for the `C1-001 Utility Nav` logic path. It does not validate compatibility USB or RF behavior.
+
 ## First Software Deliverables
 
 - cartridge inventory script

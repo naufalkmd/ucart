@@ -305,6 +305,13 @@ Prototype 0 wiring artifacts live in `hardware/prototype0/`:
 - `CARTRIDGE_BREAKOUT_WIRING_V0_1.md`
 - `HARNESS_PINOUT_V0_1.md`
 
+## Simulation-First Path
+
+If parts are not available yet, do this work first:
+
+- capture the host and cartridge breakouts in KiCad using `PROTOTYPE_0_KICAD_SCHEMATIC_CHECKLIST_V0_1.md`
+- use Wokwi only for the native `C1-001 Utility Nav` firmware path, not for compatibility USB or RF proof
+
 ## Immediate Deliverables
 
 Prototype 0 should produce these concrete outputs:
