@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "author": "Codex",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-pi-pico",
+      "id": "pico",
+      "top": -10,
+      "left": 120,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-ds1307",
+      "id": "rtc",
+      "top": -170,
+      "left": 430,
+      "attrs": { "initTime": "2026-03-11T00:00:00Z" }
+    },
+    {
+      "type": "wokwi-slide-switch",
+      "id": "swPresent",
+      "top": -130,
+      "left": -70,
+      "attrs": { "bounce": "0", "value": "" }
+    },
+    {
+      "type": "wokwi-slide-switch",
+      "id": "swId0",
+      "top": 0,
+      "left": -70,
+      "attrs": { "bounce": "0", "value": "" }
+    },
+    {
+      "type": "wokwi-slide-switch",
+      "id": "swId1",
+      "top": 130,
+      "left": -70,
+      "attrs": { "bounce": "0", "value": "1" }
+    }
+  ],
+  "connections": [
+    ["pico:GP16", "rtc:SDA", "green", []],
+    ["pico:GP17", "rtc:SCL", "green", []],
+    ["pico:VBUS", "rtc:5V", "red", []],
+    ["pico:GND.4", "rtc:GND", "black", []],
+
+    ["swPresent:1", "pico:GND.1", "black", []],
+    ["swPresent:3", "pico:3V3", "red", []],
+    ["swPresent:2", "pico:GP2", "blue", []],
+
+    ["swId0:1", "pico:GND.2", "black", []],
+    ["swId0:3", "pico:3V3", "red", []],
+    ["swId0:2", "pico:GP3", "blue", []],
+
+    ["swId1:1", "pico:GND.3", "black", []],
+    ["swId1:3", "pico:3V3", "red", []],
+    ["swId1:2", "pico:GP6", "blue", []]
+  ],
+  "dependencies": {}
+}

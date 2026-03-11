@@ -180,6 +180,8 @@ Example fields:
 
 ## Suggested Deliverables
 
+The Wokwi stage can start from `software/wokwi/c1-utility-nav-starter/`.
+
 The Wokwi stage should produce:
 
 - one `diagram.json` or equivalent Wokwi wiring definition
