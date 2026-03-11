@@ -2,14 +2,14 @@
 
 ## Overview
 
-The system uses uConsole as the host computer and UI while `uCart Host` acts as the female cartridge interface.
+The system uses uConsole as the host computer and UI while `uCart Host` acts as the cartridge interface.
 
 The core architectural move is:
 
-- one shared cartridge shell family
-- one primary slot for one cartridge at a time
-- one realistic `C1` electrical class for v1
-- future exception classes only if they are justified later
+- one primary host backplane based on the `C1` electrical interface
+- native cartridges that are designed around that standard
+- compatibility cartridges that bridge external tools onto that host cleanly
+- a future expanded native class that does not distort the compact standard
 
 ## High-Level Architecture
 
@@ -22,7 +22,7 @@ uConsole Host
    |
    +- cartridge detect and control logic
    |
-   +- C1 cartridge backplane
+   +- C1 host backplane
    |  +- 5V
    |  +- 3.3V
    |  +- USB 2.0
@@ -33,70 +33,77 @@ uConsole Host
    +- service and debug access
    |
    +- inserted cartridge
-      +- stock tool or custom board
-      +- internal carrier or adapter
-      +- module-specific ports and antenna exits
+      +- native C1 cartridge
+      |    or
+      +- C3 compatibility cartridge via carrier/interposer
 ```
 
-## Cartridge Strategy
+## Class Model
 
-### Shared Visual Standard
+### C1 Native Compact
 
-Cartridges should feel like one product family:
+`C1` is the compact native cartridge standard.
 
-- same outer silhouette where practical
-- same insertion direction
-- same latch or retention behavior
-- same visible front-face language
-- same labeling zone and orientation markers
+It is for modules that can honestly fit:
 
-### C1 Standard Cartridge
+- the compact shell assumptions
+- the compact thermal and power assumptions
+- the consistent native faceplate and UX rules
+- the `C1` backplane signal set
 
-`C1` is the only cartridge electrical class in v1.
+Current native example:
 
-It is designed for devices that can reasonably live behind:
+- `C1-001 Utility Nav`
 
-- `5V`
-- `3.3V`
-- `USB 2.0`
-- `UART`
-- `I2C`
-- ID pins
+Likely future candidates:
 
-Likely fits:
+- purpose-designed `LoRa`
+- purpose-designed `GNSS`
+- other native low-power utility modules
 
-- `HackRF`
-- `RTL-SDR`
-- `Proxmark3`
-- many `LoRa` boards
-- `GNSS`
-- `RTC`
-- `RP2040` utility designs
+### C2 Native Expanded
 
-### Future Exception Classes
+`C2` is the future expanded native cartridge standard.
 
-If a future module needs `HDMI`, `NVMe`, or `PCIe`, it should not distort `C1`.
+It exists for native modules that still belong in the `uCart` ecosystem but need more volume, thermal margin, or a larger shell.
 
-Those cases belong in a separate future class or a separate attachment path.
+`C2` should stay visually and mechanically consistent as a native class, not a compatibility dumping ground.
+
+### C3 Compatibility
+
+`C3` is the compatibility cartridge class.
+
+It is for devices that do not honestly fit the native standard physically or ergonomically but can still be adapted into the ecosystem.
+
+Current compatibility examples:
+
+- `C3-001 RTL-SDR Scout`
+- `C3-002 Proxmark3 Easy RFID`
+
+Likely future candidate:
+
+- `C3-003 HackRF One`
 
 ## Internal Bus Strategy
 
-- `USB 2.0` handles stock-tool cartridges and USB-native devices
-- `UART` handles debug and some module control paths
-- `I2C` handles RTC, low-speed sensors, and cartridge ID options
-- optional GPIO sideband is limited to local control and status
+- the host backplane remains the `C1` electrical interface in v1
+- native `C1` cartridges plug into it directly
+- `C3` compatibility cartridges reach it through an internal carrier or interposer as needed
+- `USB 2.0` handles USB-native devices
+- `UART` handles debug and simple module control paths
+- `I2C` handles RTC, sensors, and cartridge ID options
 
 ## Power Strategy
 
 - do not assume uConsole alone powers every cartridge reliably
 - provide dedicated power input to `uCart Host`
-- distribute `5V` for USB-native cartridges
-- generate `3.3V` for low-speed logic
+- distribute `5V` for USB-native or adapted compatibility cartridges
+- generate `3.3V` for native low-speed logic
 - keep noisy power sections away from RF-sensitive cartridge regions
 
 ## v1 Success Criteria
 
-- cartridge insertion and removal feels consistent across the first three cartridges
-- the host can reliably answer which cartridge is inserted
+- the host can reliably run both a native `C1` cartridge and a `C3` compatibility cartridge
+- cartridge insertion and removal feel consistent even when the internals differ by class
 - installed cartridge devices enumerate or respond reliably after repeated insertion cycles
 - no brownouts or unstable detection during normal use

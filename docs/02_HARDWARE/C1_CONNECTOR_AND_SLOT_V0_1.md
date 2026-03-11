@@ -2,9 +2,11 @@
 
 ## Purpose
 
-Select a realistic connector direction and slot concept for the first `C1` cartridge host.
+Select a realistic connector direction and slot concept for the first `C1` host backplane and slot.
 
 This document is intentionally pragmatic. The goal is not the most elegant connector on paper. The goal is a connector and slot that can survive repeated user insertion without turning `uCart` into a high-speed backplane project.
+
+This slot services direct native `C1` cartridges and the first `C3` compatibility cartridges in v1.
 
 ## Decision Summary
 

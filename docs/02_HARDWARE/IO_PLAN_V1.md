@@ -9,7 +9,7 @@
 
 ## Internal Host Connectivity
 
-### C1 Backplane
+### C1 Host Backplane
 
 - `5V`
 - `3.3V`
@@ -28,19 +28,20 @@
 
 ## Frozen v1 Device Mapping
 
-- `C1-001 RTL-SDR Scout` -> `RTL-SDR`-class USB device
-- `C1-002 Proxmark3 Easy RFID` -> `Proxmark3 Easy`-class USB device
-- `C1-003 Utility Nav` -> `RP2040 + GNSS + RTC`
+- `C1-001 Utility Nav` -> native compact cartridge using the `C1` backplane directly
+- `C3-001 RTL-SDR Scout` -> compatibility cartridge adapting an `RTL-SDR`-class USB device onto the `C1` host backplane
+- `C3-002 Proxmark3 Easy RFID` -> compatibility cartridge adapting a `Proxmark3 Easy`-class device onto the `C1` host backplane
 
 ## Deferred Mapping
 
-- `HackRF One` -> future cartridge study
-- `LoRa` -> future cartridge study
+- future native `LoRa/GNSS` modules -> `C1` or `C2` study
+- `C3-003 HackRF One` -> future compatibility study
 
 ## Current Direction
 
-- use a protected internal card-edge style connector for `C1`
+- use a protected internal card-edge style connector for the `C1` host backplane
 - use top-loading cartridge insertion into the host
+- let `C3` cartridges bridge awkward devices onto the host without redefining native `C1`
 
 ## Open Decisions
 

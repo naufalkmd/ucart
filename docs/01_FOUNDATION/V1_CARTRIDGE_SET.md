@@ -8,11 +8,11 @@ Freeze a narrow and buildable first cartridge set for `uCart`.
 
 The first three cartridges are:
 
-1. `C1-001 RTL-SDR Scout`
-2. `C1-002 Proxmark3 Easy RFID`
-3. `C1-003 Utility Nav`
+1. `C1-001 Utility Nav`
+2. `C3-001 RTL-SDR Scout`
+3. `C3-002 Proxmark3 Easy RFID`
 
-`C1-003 Utility Nav` is a low-speed utility cartridge built around:
+`C1-001 Utility Nav` is the first native cartridge and is built around:
 
 - `RP2040`
 - `GNSS`
@@ -20,57 +20,61 @@ The first three cartridges are:
 
 ## Why These Three
 
-### `C1-001 RTL-SDR Scout`
+### `C1-001 Utility Nav`
 
-Chosen first because it is:
+Chosen first because it proves the native standard is real:
+
+- native fit to the compact cartridge model
+- low-speed buses and cartridge ID logic
+- GNSS and RTC support
+- useful everyday cartridge even when no compatibility tool is inserted
+
+### `C3-001 RTL-SDR Scout`
+
+Chosen second because it proves the compatibility layer with a simpler RF tool:
 
 - cheaper than `HackRF`
 - lower power
 - easier to cool
-- easier to fit into a first cartridge shell
-- enough to prove the `C1` USB-based cartridge path
+- enough to prove RF-focused `C3` adaptation without distorting the native standard
 
-### `C1-002 Proxmark3 Easy RFID`
+### `C3-002 Proxmark3 Easy RFID`
 
-Chosen second because it proves a second real stock-tool workflow while staying more practical for a cartridge shell than larger Proxmark variants.
+Chosen third because it proves the obvious compatibility outlier:
 
-### `C1-003 Utility Nav`
-
-Chosen third because it proves the non-radio side of `C1`:
-
-- low-speed buses
-- cartridge ID and control logic patterns
-- GNSS and RTC support
-- a useful everyday cartridge even when no SDR or RFID tool is inserted
+- stock-tool workflow
+- different interaction face
+- still small enough to adapt without immediately forcing a second host standard
 
 ## Deferred From Frozen v1 Set
 
-### `HackRF One`
+### Future Native Candidates
+
+- purpose-designed `LoRa`
+- purpose-designed `GNSS` variants
+- future native modules that may fit `C1` or require `C2`
+
+### `C3-003 HackRF One`
 
 Deferred because it changes too many constraints at once:
 
 - higher power draw
 - larger board size
 - tougher thermal packaging
-- more difficult shell design
+- more difficult compatibility shell design
 
-`HackRF One` stays a strong future candidate, but it should not define the first cartridge shell.
-
-### `LoRa`
-
-Deferred because the board ecosystem is fragmented and the project needs a stable cartridge baseline first.
+`HackRF One` stays a strong future candidate, but it should not define the first host or native standard.
 
 ## Faceplate Mapping
 
-- `C1-001 RTL-SDR Scout` -> `RF` faceplate
-- `C1-002 Proxmark3 Easy RFID` -> `RFID` faceplate
-- `C1-003 Utility Nav` -> `Utility` faceplate
+- `C1-001 Utility Nav` -> native compact faceplate
+- `C3-001 RTL-SDR Scout` -> `C3 RF` faceplate
+- `C3-002 Proxmark3 Easy RFID` -> `C3 RFID` faceplate
 
 ## Success Condition
 
-`uCart` v1 is considered directionally validated when these three cartridges can be:
+`uCart` v1 is considered directionally validated when:
 
-- inserted consistently
-- detected consistently
-- powered reliably
-- used without cable sprawl or enclosure disassembly
+- one native cartridge and one compatibility cartridge can both be used cleanly in the same host
+- native and compatibility cartridges are both detected consistently
+- the system reduces cable sprawl and setup friction without lying about what is native vs compatibility

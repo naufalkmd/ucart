@@ -2,101 +2,104 @@
 
 ## Purpose
 
-Define a realistic v1 cartridge standard that creates visual consistency and lower friction without pretending every module shares the same electrical needs.
+Define the first real cartridge class model for `uCart`.
+
+The project needs native standards and a compatibility class.
+
+It should not pretend those are the same thing.
 
 ## Core Rule
 
-Standardize the cartridge experience first.
+Standardize the native cartridge experience honestly.
 
-Do not require every future cartridge to use the same electrical class.
+Use compatibility cartridges when they reduce friction without polluting the native standards.
 
 ## Standardized Elements
 
-### Visual and Mechanical Standard
+### Shared Ecosystem Rules
 
-Cartridges should align around the same physical rules where practical:
+Across the ecosystem, standardize where practical:
 
-- common outer shell family
-- common insertion direction
-- common latch or retention style
-- common front-face width and label zone
-- common orientation markers
-- common user expectation for install and removal
+- cartridge insertion direction
+- host-side slot behavior
+- labeling language
+- detection workflow
+- visual family identity
 
-### Service Standard
+### Native vs Compatibility Rule
 
-Every supported v1 cartridge should be:
+- `C1` and `C2` are real native standards
+- `C3` is a compatibility class
 
-- insertable without opening the entire host
-- removable without rewiring the system
-- identifiable by label and cartridge ID
-- accessible for antenna or service cable attachment on the cartridge face
+## Class Definitions
 
-## Electrical Classes
-
-### C1 Standard Cartridge
+### C1 Native Compact
 
 #### Intended Use
 
-USB-native tools and low-complexity utility cartridges.
+Compact native cartridges that are designed around the standard from day one.
 
 #### Required Support
 
-- `5V`
-- `3.3V`
-- `GND`
-- `USB 2.0 D+ / D-`
-- `UART TX / RX`
-- `I2C SDA / SCL`
-- ID pins or small ID device
+- direct use of the `C1` host backplane
+- compact native shell assumptions
+- consistent native compact faceplate and UX rules
 
-#### Typical Examples
+#### Example
 
-- `HackRF`
-- `RTL-SDR`
-- `Proxmark3`
-- many `LoRa` boards
-- `GNSS`
-- `RTC`
-- `RP2040` utility boards
+- `C1-001 Utility Nav`
 
-### C2 Exception Cartridge
+### C2 Native Expanded
 
 #### Intended Use
 
-Future cartridges that need a visually compatible shell but cannot fit the `C1` electrical assumptions.
-
-#### Typical Examples
-
-- `HDMI` plus `USB` KVM devices
-- `NVMe` or `PCIe` based concepts
+Larger native cartridges that still belong in the standard ecosystem but need a second native envelope.
 
 #### Rule
 
-`C2` is not part of v1 and must not complicate the `C1` slot.
+`C2` is a second standard, not a dumping ground.
+
+`C2` is not frozen in v1.
+
+### C3 Compatibility
+
+#### Intended Use
+
+Compatibility cartridges for stock external tools that do not honestly fit the native standard.
+
+#### Required Support
+
+- host integration through the `C1` backplane where practical
+- adapter carrier or interposer as needed
+- compatibility shell and faceplate rules instead of pretending to be native
+
+#### Examples
+
+- `C3-001 RTL-SDR Scout`
+- `C3-002 Proxmark3 Easy RFID`
+- future `C3-003 HackRF One` study
 
 ## What Is Not Standardized in v0.1
 
-- one universal blind-mate connector for every future cartridge
-- `HDMI`, `NVMe`, or `PCIe` inside `C1`
+- one universal cartridge for every future module
+- forcing awkward stock tools into `C1`
+- forcing `HDMI`, `NVMe`, or `PCIe` modules into the primary host slot
 - one internal PCB shape for all cartridges
-- simultaneous support for multiple active cartridges in the primary slot
 
 ## Frozen v1 Cartridge Set
 
-- `C1-001 RTL-SDR Scout`
-- `C1-002 Proxmark3 Easy RFID`
-- `C1-003 Utility Nav` based on `RP2040 + GNSS + RTC`
+- `C1-001 Utility Nav`
+- `C3-001 RTL-SDR Scout`
+- `C3-002 Proxmark3 Easy RFID`
 
 Deferred from the frozen set:
 
-- `HackRF One`
-- `LoRa`
+- future native `LoRa/GNSS` candidates for `C1` or `C2`
+- `C3-003 HackRF One` study
 
 ## Exit Criteria for v0.1
 
-- `C1` signal set is frozen
-- first three cartridges are selected
-- outer shell and slot geometry are selected
-- retention and insertion concept is selected
-- host power and detection assumptions are documented
+- the `C1/C2/C3` class model is frozen
+- the `C1` host backplane signal set is frozen
+- the first native and compatibility cartridges are selected
+- shell and faceplate rules are documented for both native and compatibility paths

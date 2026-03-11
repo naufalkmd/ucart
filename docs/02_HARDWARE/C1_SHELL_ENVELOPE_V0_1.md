@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Define a provisional outer shell and host slot envelope for the first `C1` cartridge family.
+Define a provisional shell and host slot envelope for the first `C1`-backplane-compatible cartridge body used in v1.
 
 This envelope is intentionally sized around the frozen v1 cartridge set, not around every future module idea.
 
@@ -38,7 +38,7 @@ Reserve the exposed cartridge face for module-specific access:
 - small status label area
 - optional service or breakout cutout
 
-The allowed front-face family variations for `C1` are defined in `C1_FACEPLATE_STRATEGY_V0_1.md`.
+Native and compatibility faceplate rules are defined in `V1_FACEPLATE_STRATEGY_V0_1.md`.
 
 ## Slot Assumptions
 
@@ -53,18 +53,18 @@ The host slot should assume:
 
 This size is chosen to favor the first three cartridges:
 
-- `RTL-SDR Scout`
-- `Proxmark3 Easy RFID`
-- `Utility Nav`
+- `C1-001 Utility Nav`
+- `C3-001 RTL-SDR Scout`
+- `C3-002 Proxmark3 Easy RFID`
 
 It is not chosen around `HackRF One`.
 
 ## Deferred Mechanical Problem
 
-If `HackRF One` becomes a future cartridge, it may require one of these:
+If `HackRF One` becomes a future compatibility cartridge, it may require one of these:
 
-- a larger shell family
+- a larger compatibility shell family
 - a revised internal carrier approach
-- a future `C2` form factor
+- a larger `C3` variant or a future native study if it is ever redesigned for the ecosystem
 
-That is a later decision and should not distort `C1` v0.1.
+That is a later decision and should not distort native `C1` v0.1.

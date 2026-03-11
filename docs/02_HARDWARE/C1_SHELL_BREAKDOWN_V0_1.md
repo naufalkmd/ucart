@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Define the actual shell-part strategy for `C1` so the project uses one shell family with limited variation instead of drifting into one-off cartridge enclosures.
+Define the actual shell-part strategy for the first `C1`-backplane-compatible cartridge body used in v1 so the project uses one shell family with limited variation instead of drifting into one-off cartridge enclosures.
 
 ## Core Rule
 
@@ -42,11 +42,7 @@ It should define:
 - LED or button openings
 - family-specific visual identity within the shared shell language
 
-For `C1 v0.1`, this should be limited to the three accepted faceplate families:
-
-- `RF`
-- `RFID`
-- `Utility`
+For v1, this should follow the native-versus-compatibility faceplate split defined in `V1_FACEPLATE_STRATEGY_V0_1.md`.
 
 ### 3. Internal Carrier or Bracket Set
 
@@ -125,11 +121,11 @@ Rules:
 
 ## Frozen v1 Cartridge Mapping
 
-| Cartridge ID | Cartridge Name        | Shared Main Shell | Faceplate | Internal Carrier |
-| ------------ | --------------------- | ----------------- | --------- | ---------------- |
-| `C1-001`     | `RTL-SDR Scout`       | Yes               | `RF`      | custom RTL-SDR carrier |
-| `C1-002`     | `Proxmark3 Easy RFID` | Yes               | `RFID`    | custom Proxmark carrier |
-| `C1-003`     | `Utility Nav`         | Yes               | `Utility` | utility PCB carrier |
+| Cartridge ID | Cartridge Name        | Shared Main Shell | Faceplate Strategy | Internal Carrier |
+| ------------ | --------------------- | ----------------- | ------------------ | ---------------- |
+| `C1-001`     | `Utility Nav`         | Yes               | native compact     | utility PCB carrier |
+| `C3-001`     | `RTL-SDR Scout`       | Yes               | `C3 RF`            | custom RTL-SDR carrier |
+| `C3-002`     | `Proxmark3 Easy RFID` | Yes               | `C3 RFID`          | custom Proxmark carrier |
 
 ## What Should Not Vary in v0.1
 
@@ -143,14 +139,14 @@ Do not vary these per cartridge unless testing proves the baseline is wrong:
 
 ## What May Force a Future Shell Split
 
-These are real reasons to create a future shell family or `C2` body, not just a new faceplate:
+These are real reasons to create a future shell family or a larger compatibility/native body, not just a new faceplate:
 
 - significantly larger board volume
 - materially higher thermal load
 - multiple RF connector exits that cannot fit the shared face zone cleanly
 - structural conflict with the current latch and rail geometry
 
-`HackRF One` is the obvious future candidate that may hit one or more of these limits.
+`HackRF One` is the obvious future compatibility candidate that may hit one or more of these limits.
 
 The first printable shell and slot geometry targets are documented in `C1_SLOT_AND_SHELL_MOCKUP_SPEC_V0_1.md`.
 
@@ -162,6 +158,6 @@ If a new cartridge can be solved by changing only:
 - the internal carrier
 - minor support parts
 
-then it still belongs in the `C1` shell family.
+then it still belongs in the current slot-compatible shell family.
 
 If it needs a new outer body, challenge it hard before accepting that change.

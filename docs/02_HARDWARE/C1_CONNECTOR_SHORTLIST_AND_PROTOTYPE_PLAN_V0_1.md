@@ -109,7 +109,8 @@ Method:
 - host-side breakout board exposing all `C1` signals
 - cartridge-side breakout board exposing all `C1` signals
 - connect them with short jumper or ribbon links
-- validate `RTL-SDR`, `Proxmark3 Easy`, and `Utility Nav` signal needs
+- validate native `C1-001 Utility Nav` needs
+- validate compatibility needs for `C3-001 RTL-SDR Scout` and `C3-002 Proxmark3 Easy RFID`
 
 Success criteria:
 
@@ -165,13 +166,13 @@ Prove the actual host concept with real cartridges.
 
 Suggested pair:
 
-- `C1-001 RTL-SDR Scout`
-- `C1-003 Utility Nav`
+- `C1-001 Utility Nav`
+- `C3-001 RTL-SDR Scout`
 
 Reason:
 
-- one USB-native stock-tool case
-- one low-speed utility case
+- one native cartridge case
+- one compatibility cartridge case
 - enough variety to expose bad assumptions quickly
 
 Success criteria:
@@ -191,6 +192,7 @@ Success criteria:
 
 - do not optimize for final industrial appearance
 - do not design around `HackRF One` yet
+- do not let `C3` compatibility requirements silently redefine native `C1`
 - do not chase hot-swap polish before basic insertion reliability exists
 - do not add `USB 3.x`, `HDMI`, or future-proof pins to the first prototype
 

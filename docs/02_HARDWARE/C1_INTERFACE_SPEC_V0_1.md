@@ -2,9 +2,13 @@
 
 ## Purpose
 
-Define the first logical signal set for the `C1` cartridge class.
+Define the first logical signal set for the `C1` host backplane.
 
-This document freezes the signal model for v0.1.
+This document freezes the primary host-side signal model for v0.1.
+
+Native `C1` cartridges plug into this interface directly.
+
+`C3` compatibility cartridges may reach it through an internal carrier or interposer.
 
 The recommended slot and connector direction is documented in `C1_CONNECTOR_AND_SLOT_V0_1.md`.
 
@@ -12,7 +16,7 @@ The exact production connector part is still open.
 
 ## Design Intent
 
-`C1` should support:
+The `C1` host backplane should support:
 
 - USB-native cartridges
 - low-speed utility cartridges

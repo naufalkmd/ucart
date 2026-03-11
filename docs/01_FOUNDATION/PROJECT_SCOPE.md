@@ -14,45 +14,47 @@ Using several uConsole extensions and external tools creates too much friction:
 
 `uCart` is a cartridge-based expansion system for uConsole.
 
-It standardizes the visible user experience of modules by using a cartridge family with a shared shell and insertion behavior.
+It standardizes the visible user experience of modules by splitting them into:
 
-It does not assume that every module should share the same electrical connector.
+- native cartridges that are designed around the standard from day one
+- compatibility cartridges that adapt external tools without pretending they are native fits
 
 ## In Scope for v1
 
 - one `uCart Host` attached to uConsole
-- one primary cartridge slot
-- one shared cartridge shell family for v1
-- one primary electrical class: `C1`
-- support for stock-tool cartridges using `C1` where practical
+- one primary host slot using the `C1` electrical backplane
+- `C1` native compact cartridge definition
+- `C2` high-level native expanded cartridge definition
+- `C3` compatibility cartridge definition
+- one frozen native `C1` cartridge
+- two frozen `C3` compatibility cartridges
 - host-side power input and regulation
 - repeatable cartridge detection and verification workflow
 - serviceable enclosure with exposed status and maintenance access
 
 ## Frozen v1 Cartridges
 
-- `C1-001 RTL-SDR Scout`
-- `C1-002 Proxmark3 Easy RFID`
-- `C1-003 Utility Nav` based on `RP2040 + GNSS + RTC`
+- `C1-001 Utility Nav` based on `RP2040 + GNSS + RTC`
+- `C3-001 RTL-SDR Scout`
+- `C3-002 Proxmark3 Easy RFID`
 
 ## Deferred Candidates
 
-- `HackRF One`
-- `LoRa`
+- future native `LoRa/GNSS` cartridge candidates for `C1` or `C2`
+- `C3-003 HackRF One` compatibility study
 
 ## Out of Scope for v1
 
 - one universal connector for every future cartridge
 - simultaneous multi-cartridge operation in the primary slot
-- forcing `HDMI`, `NVMe`, or `PCIe` modules into the `C1` slot
+- forcing `HackRF` or `Proxmark3` to pretend they are native `C1` fits
+- forcing `HDMI`, `NVMe`, or `PCIe` modules into the primary `C1` slot
 - full custom host motherboard
-- custom SDR redesign
-- custom RFID or NFC redesign
 
 ## Design Principles
 
 - visual consistency first
-- simple insertion and removal workflow first
-- stock tools stay stock unless redesign is clearly worth it
-- electrical honesty over fake universality
+- native standards stay honest
+- compatibility cartridges are allowed when they reduce user friction without polluting the native standard
 - serviceability beats visual cleanliness
+- electrical honesty over fake universality
